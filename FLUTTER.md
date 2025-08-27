@@ -1,13 +1,3 @@
-# 🚀 Flutter Tricks Collection
-
-A collection of useful Flutter tricks, tweaks, and fixes to make development smoother.  
-Click any trick below to jump directly to its guide.  
-
-## 📑 Index
-1. [Remove Flutter’s Default Native Android Splash Screen (Android)](#remove-flutters-default-native-android-splash-screen-android)
-
----
-
 
 # Remove Flutter’s Default Native Android Splash Screen (Android)
 
