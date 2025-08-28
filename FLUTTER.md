@@ -6,7 +6,7 @@ If you want to skip this splash flicker and directly show your custom Flutter sp
 
 ## ✅ Step 1: Update styles.xml
 > Path: android/app/src/main/res/values/styles.xml
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Default Flutter launch theme -->
@@ -25,7 +25,7 @@ If you want to skip this splash flicker and directly show your custom Flutter sp
 
 ## ✅ Step 2: Update AndroidManifest.xml
 > Find the application block in your manifest and replace the theme:
-```
+```xml
 
 android:theme="@style/Theme.App.Transparent">   <!-- Updated theme as-->
 
@@ -33,7 +33,7 @@ android:theme="@style/Theme.App.Transparent">   <!-- Updated theme as-->
 
 ## ✅ Step 3: Add AppCompat Dependency
 > Path: android/app/build.gradle.kts
-```
+```bash
 dependencies {
     implementation("androidx.appcompat:appcompat:1.4.0")
 }
@@ -44,7 +44,7 @@ dependencies {
 > manage (development, production) apps using flutter_flavorizr
 
 ## Step 1: Add flutter_flavorizr package in dev_dependencies
-```
+```bash
 
 flutter_flavorizr: ^2.4.1
 
@@ -53,7 +53,7 @@ flutter_flavorizr: ^2.4.1
 ## Step 2: Add a flavorizr section
 > At the bottom of pubspec.yaml aligned with flutter you can add many flavours you want
 
-```
+```bash
 flutter:
   uses-material-design: true
   ....
@@ -80,7 +80,7 @@ flavorizr:
 > this will auto create some files and configurations for both Android and Ios based on your flavour configration.
 > auto creates flavors.dart in lib folder.
 > auto creates app.dart
-```
+```bash
 
 dart run flutter_flavorizr
 
@@ -89,24 +89,24 @@ dart run flutter_flavorizr
 ## Step 4: Command to run in debug, profile, release mode
 > Debug mode
 > if not using multiple main.dart (like: main_dev.dart or main_prod.dart)
-```
+```bash
 flutter run --flavor dev
 
 flutter run --flavor prod
 ```
 > If you are using multiple main, then you have setup accordingly then use as :
-```
+```bash
 flutter run --flavor dev -t lib/main_dev.dart
 
 flutter run --flavor prod -t lib/main_dev.dart
 ```
 > Profile Mode
-```
+```bash
 flutter run --flavor dev --profile 
 flutter run --flavor prod --profile
 ```
 > Release Mode
-```
+```bash
 flutter run --flavor dev --release 
 flutter run --flavor prod --release
 ```
@@ -114,19 +114,19 @@ flutter run --flavor prod --release
 ## Step 5: Command to create builds
 ### Android
 > Debug APK
-```
+```bash
 
 flutter build apk --flavor dev
 
 ```
 > Release APK
-```
+```bash
 
 flutter build apk --flavor prod
 
 ```
 > Release AAB (Play Store)
-```
+```bash
 
 flutter build appbundle --flavor prod
 
@@ -134,18 +134,18 @@ flutter build appbundle --flavor prod
 
 ### IOS
 > Debug
-```
+```bash
 
 flutter build ios --flavor dev
 
 ```
 > Release
-```
+```bash
 
 flutter build ios --flavor prod
 
 ```
-
+<br> <br>
 
 # Flutter Version Management
 
@@ -153,33 +153,34 @@ You can manage multiple Flutter SDK versions on a single system using the **FVM 
 This is useful when working on different projects that require different Flutter versions.
 
 ## Steps to follow 
-```
+```bash
 dart pub global activate fvm
 
 ```
 
->Note: If you encounter an error like fvm: command not found, you may need to add the Dart pub cache bin to your PATH:
->Windows: C:\Users\<YourUsername>\AppData\Local\Pub\Cache\bin
+>Note: If you encounter an error like fvm: command not found, you may need to add the Dart pub cache bin to your PATH: <br>
+>Windows: C:\Users\<YourUsername>\AppData\Local\Pub\Cache\bin  <br>
 >macOS/Linux: ~/.pub-cache/bin
-```
+```bash
 fvm --version  // to check fvm version
 fvm install 3.29.0  // intall flutter desired version 
 ```
 
-> Go inside in your Flutter project and run thhis command to configure
-```
+> Go inside in your Flutter project and run this command to configure
+```bash
 
 fvm use 3.29.0
 
 ```
 > Now you all set to run flutter command using fvm 
 > Note : to use the flutter version you have set for project usinf fvm , you must prefix fvm before flutter commands like :
-```
+```bash
 fvm flutter doctor 
 fvm flutter run --debug
 fvm flutter run --profile
 fvm flutter build apk --release
 ```
+<br> <br>
 
 # Restart Flutter App Without Package
 
@@ -259,14 +260,16 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
->📝 How It Works for me
->**entryPoint()** initializes Hive, dependency locator, and runs the app.
->**restartApp()**
-> Navigates to the root route (/) using GoRouter.
-> Adds a short delay.
-> Resets GetIt dependency container.
-> Re-initializes dependencies with diSetup().
+>📝 How It Works for me <br>
+>**entryPoint()** initializes Hive, dependency locator, and runs the app. <br>
+>**restartApp()**  <br>
+> --> Navigates to the root route (/) using GoRouter. <br>
+> --> Adds a short delay. <br> 
+> --> Resets GetIt dependency container. <br>
+> --> Re-initializes dependencies with diSetup(). <br> 
 >**MyApp** is rebuilt with fresh providers and a unique GlobalKey.
+<br> <br>
+
 
 
 
