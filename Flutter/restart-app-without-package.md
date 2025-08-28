@@ -84,4 +84,3 @@ class MyApp extends StatelessWidget {
 > --> Resets GetIt dependency container. <br>
 > --> Re-initializes dependencies with diSetup(). <br> 
 >**MyApp** is rebuilt with fresh providers and a unique GlobalKey.
-<br> <br>

@@ -23,7 +23,7 @@ fvm install 3.29.0  // intall flutter desired version
 fvm use 3.29.0
 
 ```
-> Now you all set to run flutter command using fvm 
+> Now you all set to run flutter command using fvm  <br>
 > Note : to use the flutter version you have set for project usinf fvm , you must prefix fvm before flutter commands like :
 ```bash
 fvm flutter doctor 
