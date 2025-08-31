@@ -45,6 +45,7 @@ A collection of useful Git commands to make development smoother.
 A collection of useful Server commands related to deployment, fixes on server.  
 
 ### 📑 Index
-1. 
+1. [Deploy Nextjs App On Cloud Server Manually](Server/deploy-nextjs-app-on-vps.md)
+2. [Linux Commands On Server](Server/linux-command-on-server.md)
 
 ---
